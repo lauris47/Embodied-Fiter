@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Gates : MonoBehaviour
 {
-    public Transform scoreBoard, prefabShooter;
+    public Transform scoreBoard;
     public int ballHits = 0;
+    public bool opponentsGate;
 
     private void OnTriggerEnter(Collider other)
     {

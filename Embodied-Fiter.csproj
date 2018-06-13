@@ -298,7 +298,9 @@
     <Compile Include="Assets\Rokoko\Smartsuit\Scripts\SmartsuitStatus.cs" />
     <Compile Include="Assets\Rokoko\Smartsuit\Scripts\SmartsuitSyncWithHMD.cs" />
     <Compile Include="Assets\Scripts\ArmsAreLegs.cs" />
+    <Compile Include="Assets\Scripts\BallCollision.cs" />
     <Compile Include="Assets\Scripts\BoneReference.cs" />
+    <Compile Include="Assets\Scripts\FindString.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Gates.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />

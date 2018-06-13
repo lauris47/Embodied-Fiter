@@ -11,9 +11,11 @@ public class GameManager : MonoBehaviour {
     int currentObstacle;
     public float obstacleMoveSpeed = 0.01f;
     private Vector3 initialObstaclePos;
+    public GameObject giraffeControler, humanControler, thirdPersonCharacter, humanFirstPersonCamera;
+    public int perspective = 0;
+
+    bool firstPersonHuman, thirdPersonHuman = true, thirdPersonGiraffe;
    
-
-
     void Start () {
         obstacles = new GameObject [obstacleHolder.transform.childCount];
 
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour {
             obstalceCount++;
             initialObstaclePos = _obstacles.transform.position;
         }
+        giraffeControler.SetActive(false);
 	}
 
     // Update is called once per frame
@@ -32,6 +35,11 @@ public class GameManager : MonoBehaviour {
         if (gameStarted && obstacles != null) { }
 
         ObstacleMover();
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SwitchPerspective();
+        }
     }
 
     void ObstacleMover()
@@ -48,8 +56,6 @@ public class GameManager : MonoBehaviour {
 
         }else
         {
-            //GameObject tempObstacle = obstacles[obstacleHolder.transform.childCount]
-            //obstacles[currentObstacle] = 
             obstacles[currentObstacle].transform.position = initialObstaclePos;
             obstacles[currentObstacle].SetActive(false);
             currentObstacle++;
@@ -61,7 +67,42 @@ public class GameManager : MonoBehaviour {
             currentObstacle = 0;
             
         }
-        //if (obstacles[])
-        //obstacles[]
+    }
+
+    public void SwitchPerspective()
+    {
+        if(perspective < 2)
+        {
+            perspective++;
+        }
+        else
+        {
+            perspective = 0;
+        }
+
+        //Human third person
+        if (perspective == 0)
+        {
+            thirdPersonCharacter.SetActive(true);
+            giraffeControler.SetActive(false);
+            humanFirstPersonCamera.SetActive(false);
+            humanControler.SetActive(true);
+        }
+        //Human first perspective
+        if (perspective == 1)
+        {
+            thirdPersonCharacter.SetActive(false);
+            giraffeControler.SetActive(false);
+            humanControler.SetActive(true);
+            humanFirstPersonCamera.SetActive(true);
+        }
+        //Girafee, third perspective
+        if (perspective == 2)
+        {
+            thirdPersonCharacter.SetActive(true);
+            giraffeControler.SetActive(true);
+            humanControler.SetActive(false);
+            humanFirstPersonCamera.SetActive(false);
+        }
     }
 }

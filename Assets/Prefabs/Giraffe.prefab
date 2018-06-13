@@ -440,6 +440,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4420892655109230}
+  - component: {fileID: 114814414780529088}
   m_Layer: 0
   m_Name: RokokoGuy_Hips
   m_TagString: Untagged
@@ -1010,8 +1011,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4425677842501768}
-  - component: {fileID: 95831651896681280}
-  - component: {fileID: 114743062954219946}
+  - component: {fileID: 114994354658737166}
   m_Layer: 0
   m_Name: Giraffe
   m_TagString: Untagged
@@ -1420,7 +1420,7 @@ Transform:
   - {fileID: 4224447257950912}
   - {fileID: 4048929656881624}
   m_Father: {fileID: 4425677842501768}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4425677842501768
 Transform:
@@ -1428,15 +1428,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1996937241187148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.498867, y: 8.2388466e-19, z: -0.03312625}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -26.01, y: 8.2388466e-19, z: 2.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4888162352576434}
   - {fileID: 4420892655109230}
+  - {fileID: 4888162352576434}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4429212043770084
 Transform:
   m_ObjectHideFlags: 1
@@ -1879,7 +1879,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4425677842501768}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4912999340586410
 Transform:
@@ -1979,24 +1979,32 @@ Transform:
   m_Father: {fileID: 4420892655109230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &95831651896681280
-Animator:
-  serializedVersion: 3
+--- !u!114 &114814414780529088
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1996937241187148}
+  m_GameObject: {fileID: 1439400016545558}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: dd87d61453ed78347ac896c29d0d57a7, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114743062954219946
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a0a5636eda1fec439ec1987afd69677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RokokoBones: {fileID: 0}
+  leftFrontLeg: {fileID: 4225418971986034}
+  leftFrontKnee: {fileID: 4460677250332468}
+  leftFrontToe: {fileID: 4228727172260780}
+  rightFrontLeg: {fileID: 4684782722688192}
+  rightFrontKnee: {fileID: 4412038299365890}
+  rightFrontToe: {fileID: 4473342820472630}
+  spineOffset: {x: 0, y: 0, z: 0, w: 0}
+  leftLegOffset: {x: 0, y: 0, z: 0}
+  rightLegOffset: {x: 0, y: 0, z: 0}
+  offsetBone:
+  - {fileID: 4137184066482494}
+  offsetBoneRotation:
+  - {x: 0, y: 0, z: 0}
+--- !u!114 &114994354658737166
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2004,26 +2012,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 1996937241187148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a0a5636eda1fec439ec1987afd69677, type: 3}
+  m_Script: {fileID: -383841817, guid: 595a313eb2195f244982a4cc42e699c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RokokoBones: {fileID: 0}
-  leftLeg: {fileID: 4400210883399086}
-  leftKnee: {fileID: 4700001182752370}
-  leftToe: {fileID: 4956280615806594}
-  rightLeg: {fileID: 4358767635127124}
-  rightKnee: {fileID: 4380257651826938}
-  rightToe: {fileID: 4092256392518080}
-  leftBackHip: {fileID: 4420892655109230}
-  leftBackKnee: {fileID: 4959516456511092}
-  leftBackToe: {fileID: 4409223668622940}
-  rightBackHip: {fileID: 4224447257950912}
-  rightBackKnee: {fileID: 4380257651826938}
-  rightBackToe: {fileID: 4018942659034578}
-  hips: {fileID: 4420892655109230}
-  head: {fileID: 0}
-  neck: {fileID: 0}
-  spine: {fileID: 0}
+  HubID: 
+  autoSelect: 1
+  CurrentState:
+    name: 
+    sensors: []
+    isUnicast: 0
+    hasProfile: 0
+    profileToggle: 0
+    timestamp: 0
+  suitInfo:
+    details: []
+  autoSelectUnique: 1
+  useHumanoidBones: 0
+  boneMapping:
+    Hips: {fileID: 4420892655109230}
+    LeftUpperLeg: {fileID: 4959516456511092}
+    RightUpperLeg: {fileID: 4224447257950912}
+    LeftLowerLeg: {fileID: 4409223668622940}
+    RightLowerLeg: {fileID: 4380257651826938}
+    LeftFoot: {fileID: 4730092988227094}
+    RightFoot: {fileID: 4018942659034578}
+    Spine: {fileID: 4048929656881624}
+    Chest: {fileID: 4875060205194560}
+    Neck: {fileID: 4312929860903480}
+    Head: {fileID: 4145160180082958}
+    LeftShoulder: {fileID: 0}
+    RightShoulder: {fileID: 0}
+    LeftUpperArm: {fileID: 0}
+    RightUpperArm: {fileID: 0}
+    LeftLowerArm: {fileID: 0}
+    RightLowerArm: {fileID: 0}
+    LeftHand: {fileID: 0}
+    RightHand: {fileID: 0}
+    LeftToe: {fileID: 4366503071411262}
+    RightToe: {fileID: 4758419694579522}
 --- !u!137 &137302166905409854
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

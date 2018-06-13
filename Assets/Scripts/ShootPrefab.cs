@@ -148,5 +148,4 @@ public class ShootPrefab : MonoBehaviour
             //Destroy(transform.gameObject);
         }
     }
-
 }

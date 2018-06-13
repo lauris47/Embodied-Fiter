@@ -17,10 +17,10 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Collided");
+        //Debug.Log("Collided");
         if (collision.gameObject.tag == obstacle)
         {
-            Debug.Log("Collided");
+            //Debug.Log("Collided");
         }
     }
 }

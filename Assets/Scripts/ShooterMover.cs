@@ -9,14 +9,11 @@ public class ShooterMover : MonoBehaviour {
     bool movingLeft = true, movingRight;
     // Use this for initialization
     Vector3 positionRight, positionLeft;
-
-
 	void Start () {
         initialPosition = transform.position;
         positionRight = initialPosition - new Vector3(0, 0, sideSwingDistance);
         positionLeft = initialPosition + new Vector3(0, 0, sideSwingDistance);
     }
-	
 	// Update is called once per frame
 	void FixedUpdate () {
 
@@ -31,7 +28,6 @@ public class ShooterMover : MonoBehaviour {
             movingLeft = false;
             movingRight = true;
         }
-
         if (movingRight)
         {
             transform.position = Vector3.Slerp(transform.position, positionRight - new Vector3(0, 0, sideSwingDistance / 10), movingSpeed);
