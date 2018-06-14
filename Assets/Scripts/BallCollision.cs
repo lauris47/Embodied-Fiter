@@ -11,7 +11,7 @@ public class BallCollision : MonoBehaviour {
     }
     void OnCollisionEnter(Collision col)
     {
-        if(transform.GetComponent<Rigidbody>().velocity.magnitude > 5)
+        if(transform.GetComponent<Rigidbody>().velocity.magnitude > 4)
         {
             PlaySound((int)Random.Range(0, _sounds.Length-1), 26 / transform.GetComponent<Rigidbody>().velocity.magnitude);
             //Debug.Log(transform.GetComponent<Rigidbody>().velocity.magnitude);

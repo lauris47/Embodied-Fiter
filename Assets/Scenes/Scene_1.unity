@@ -155,7 +155,7 @@ Prefab:
     - target: {fileID: 114738443999550868, guid: f3d4baa0039acf44abc664784319d37d,
         type: 2}
       propertyPath: portRangeEnd
-      value: 14042
+      value: 14043
       objectReference: {fileID: 0}
     - target: {fileID: 114738443999550868, guid: f3d4baa0039acf44abc664784319d37d,
         type: 2}
@@ -351,9 +351,30 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &94302742 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1760555998264378, guid: 89c565fa548ec51458899346c5140091,
+    type: 2}
+  m_PrefabInternal: {fileID: 690997539}
+--- !u!114 &94302745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 94302742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39ac010c64c15b647a22ea968f17ff9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readThisFile: {fileID: 4900000, guid: fb3aa6d89dd8a2b419c8a77d6bc1af0c, type: 3}
 --- !u!1001 &132504451
 Prefab:
   m_ObjectHideFlags: 0
@@ -1145,6 +1166,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114162531478098252, guid: 89c565fa548ec51458899346c5140091,
+        type: 2}
+      propertyPath: shootingSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4703262703174342, guid: 89c565fa548ec51458899346c5140091, type: 2}
       propertyPath: m_LocalPosition.x
       value: -48.206623
@@ -1190,7 +1216,7 @@ Prefab:
     - target: {fileID: 114162531478098252, guid: 89c565fa548ec51458899346c5140091,
         type: 2}
       propertyPath: _shootForce
-      value: 50
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4479378894465610, guid: 89c565fa548ec51458899346c5140091, type: 2}
       propertyPath: m_LocalScale.y
@@ -1212,6 +1238,31 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -14.63
       objectReference: {fileID: 0}
+    - target: {fileID: 114162531478098252, guid: 89c565fa548ec51458899346c5140091,
+        type: 2}
+      propertyPath: _startShooting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114162531478098252, guid: 89c565fa548ec51458899346c5140091,
+        type: 2}
+      propertyPath: playShootingSound
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114162531478098252, guid: 89c565fa548ec51458899346c5140091,
+        type: 2}
+      propertyPath: shootingSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1a79a46672e52534cac906e389592aa9, type: 3}
+    - target: {fileID: 114162531478098252, guid: 89c565fa548ec51458899346c5140091,
+        type: 2}
+      propertyPath: shootingSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d062b088b2650614cadc42daded1cce6, type: 3}
+    - target: {fileID: 114162531478098252, guid: 89c565fa548ec51458899346c5140091,
+        type: 2}
+      propertyPath: shootingSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: b2016abf23d748e43bb0eba48ce14556, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89c565fa548ec51458899346c5140091, type: 2}
   m_IsPrefabParent: 0

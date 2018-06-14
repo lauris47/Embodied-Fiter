@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ShootPrefab : MonoBehaviour
 {
+    public bool playShootingSound;
     private bool shotsFired;
     public Transform player;
     public GameObject[] shootThesePrefabs;
     public int _shootForce = 10;
     public int shootUpForce = 2;
     private int shootForce;
-    public bool shootAgain;
+    public bool  shootAgain;
     private string[] lastKnownNames;
     private bool shootReady, stopShooting;
     public int shootInterval = 1;
@@ -29,6 +30,10 @@ public class ShootPrefab : MonoBehaviour
     private bool autoShootingStarted;
     private bool realocatingRan;
 
+    private AudioSource soundSource;
+    public AudioClip[] shootingSounds;
+
+
     private float lastShotTime;
 
     public Transform _container;
@@ -44,6 +49,11 @@ public class ShootPrefab : MonoBehaviour
         {
             lastKnownNames[i] = shootThesePrefabs[i].name;
         }
+
+        //Shooting sound settings
+        soundSource = transform.gameObject.AddComponent<AudioSource>();
+        soundSource.spatialBlend = 1;
+        soundSource.rolloffMode = AudioRolloffMode.Linear;
     }
 
 
@@ -57,7 +67,7 @@ public class ShootPrefab : MonoBehaviour
             autoShootingStarted = true;
         }
 
-        if (!stopShooting && _startShooting || _startShooting)
+        if (!stopShooting && _startShooting || _startShooting || shootAgain)
         {
             // if objects are null (changed style)
             if (shootThesePrefabs[0] == null && !realocatingRan)
@@ -140,6 +150,11 @@ public class ShootPrefab : MonoBehaviour
             shotsFired = true;
             shootAgain = false;
 
+            if (playShootingSound)
+            {
+                PlaySound((int)Random.Range(0, shootingSounds.Length), Random.Range(0.6f,1f));
+            }
+
             if(_container != null)
             {
                 _shootPrefab.transform.parent = _container;
@@ -147,5 +162,12 @@ public class ShootPrefab : MonoBehaviour
             }
             //Destroy(transform.gameObject);
         }
+    }
+
+    void PlaySound(int _index, float _volume)
+    {
+        soundSource.clip = shootingSounds[_index];
+        soundSource.volume = _volume;
+        soundSource.Play();
     }
 }
