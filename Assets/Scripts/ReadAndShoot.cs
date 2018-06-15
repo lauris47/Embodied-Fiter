@@ -17,6 +17,12 @@ public class ReadAndShoot : MonoBehaviour
     {
         reaString = readThisFile.ToString();
         initialFileLenght = reaString.Length / 2;
+        waitTimes = readThisFile.ToString().Split(","[0]); // Will separate numbers, detected by commas
+
+        for (int i = 0; i < waitTimes.Length; i++)
+        {
+            //Debug.Log(waitTimes[i]); // print all detected shooting times
+        }
 
         if (GetComponent<ShootPrefab>())
         {
@@ -26,22 +32,10 @@ public class ReadAndShoot : MonoBehaviour
         {
             Debug.Log("No ShootPrefab is attached to the game object");
         }
-
-        waitTimes = readThisFile.ToString().Split(","[0]); // Will separate numbers, detected by commas
-
-        for (int i = 0; i < waitTimes.Length; i ++){
-            //Debug.Log(waitTimes[i]); // print all detected shooting times
-        }
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator _ReadAndShoot(float _waitTime)
+
     {
 
 
